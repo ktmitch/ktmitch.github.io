@@ -1,3 +1,5 @@
+This is giving credit to the user who created the theme I utilized for my Portfolio.
+---------------------
 Miniport by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
