@@ -5,7 +5,6 @@
 	<title>Kevin's Tic Tac Toe</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="author" content="Kevin M" />
 	<link rel="stylesheet" href="game.css" />
 	<script src="script.js" defer></script> <!--Loads after the Html for access to body-->
 	<script src="https://kit.fontawesome.com/359d4feab7.js" crossorigin="anonymous"></script>
@@ -14,24 +13,30 @@
 <body>
 
 <div>
-	<header>
-	<h1>Welcome to Kevin's Tic Tac Toe!</h1>
-	</header>
-<!-- Idea - HTML Local Web Storage for Inputs	 -->
-	<div>
-		<label for="onename">Player One Name:</label>
-		<input type="text" id="onename"></br></br>
-	</div>
-		<label for="twoname">Player Two Name:</label>
-		<input type="text" id="twoname"></br></br>
-	<div>
-		<!--Get is for showing non sensitive information within the URL-->
-		<form>
-			<button type="submit" formaction="tictactoegame.html" formmethod="get">
-			Begin!</button>
-		</form>
+	<div class="heading">
+		<h2>X's turn</h2>
 	</div>
 	
+	<div class="heading">
+		<h2>O's turn</h2>
+	</div>
+</div>
+
+<div class="board" id="board">
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+	<div class="cell"></div>
+</div>
+
+<div class="winmsg" id="winmsg">
+	<div></div>
+	<button id="rematchbutton">Rematch</button>
 </div>
 <!--Emojis customizable with Font Size-->
 <p>&#128516 </p> <!--Happy Face-->

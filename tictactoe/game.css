@@ -1,0 +1,33 @@
+.heading {
+	float: left;
+	width: 33%;
+	padding: 100px;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	--cell-size: 100px; 
+	--mark-size: calc(var(--cell-size) * .9;
+}
+
+.board {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, auto); /* Number of columns; Same as auto auto auto */
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
+	
+}
+
+.cell {
+	width: var(--cell-size); /*Variable of 100px for both */
+	height: var(--cell-size);
+	border: 1px solid black;
+}
