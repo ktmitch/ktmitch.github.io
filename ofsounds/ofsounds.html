@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OF Soundboard</title>
+    <link rel="stylesheet" href="ofsounds.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+    <!-- Went to Google Fonts, Added Families, and copied link from Embed Can only use selected styles-->
+</head>
+
+<body>
+    <!-- About Info and Pause -->
+    <section id="topbuttons">
+        <button type="button" onclick="alert('OF Soundboard is a collection of sounds made by OF members and affiliates created by OF Kev!')">About</button>
+        <button onclick="pauseAudio()" type="button">Pause Sound</button>
+        <button onclick="stopAudio()" type="button">Stop Sound</button>
+    </section>
+
+    <!-- Audio -->
+    <audio id="kevpanting">
+        <source src="sounds/kevpanting.mp3" type="audio/mpeg">
+        Your browser does not support this magnificent audio!
+    </audio>
+
+    <audio id="adub">
+        <source src="sounds/adub.m4a" type="audio/mp4" preload="auto">
+        Your browser does not support this magnificent audio!
+    </audio>
+    
+    <audio id="hurt">
+        <source src="sounds/hurt.mp3" type="audio/mpeg">
+        Your browser does not support this magnificent audio!
+    </audio>
+
+    <!--Sections or Divs with sounds for each person. -->
+    <!--Kev (Me) -->
+    <div class="kev">
+        <section>
+            <h2>OF Kev:</h2>
+            <button onclick="playAudio()" type="button">*Panting*</button>
+            <button onclick="playAudiotwo()" type="button">A Dub</button>
+        </section>
+        <hr>
+    </div>
+
+    <!--Doug -->
+    <div class="doug">
+        <section>
+            <h2>OF Doug:</h2>
+            <button>Brains (Placeholder)</button>
+        </section>
+        <hr>
+    </div>
+
+    <!--DJ -->
+    <div class="dj">
+        <section>
+            <h2>OF DJ:</h2>
+            <button>Singing (Placeholder)</button>
+        </section>
+        <hr>
+    </div>
+
+        <!--Pres -->
+        <div class="pres">
+            <section>
+                <h2>OF Pres:</h2>
+                <button>Toxic Laugh (Placeholder)</button>
+            </section>
+            <hr>
+        </div>
+
+    <!--Other -->
+    <div class="other">
+        <section>
+            <h2>Other:</h2>
+            <button onclick="playAudiothree()" type="button">Hurt</button>
+        </section>
+        <hr>
+    </div>
+
+<script src="ofsounds.js"></script>
+
+</body>
+
+</html>

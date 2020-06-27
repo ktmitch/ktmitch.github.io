@@ -1,0 +1,87 @@
+:root {
+    --kevcolor: #0099ff;
+}
+
+button {
+    font-family: "Saira Condensed", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: outset;
+    margin: 10px;
+    box-shadow: 3px 3px 10px;
+}
+
+button:hover {
+    background-color: rgb(240, 240, 158);
+}
+
+button:active {
+    transform: scale(0.9);
+    border: ridge;
+}
+
+h2 {
+    font-family: "Roboto Slab", serif, Arial, Helvetica, sans-serif;
+    margin-right: 15px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+
+/* Top Buttons */
+
+#topbuttons button {
+    background-color: rgb(26, 25, 25);
+}
+
+/* Kevin */
+.kev  {
+    color: var(--kevcolor);
+}
+
+.kev button {
+    background-color: var(--kevcolor);
+}
+
+/* Doug */
+.doug h2 {
+    color: #ff3333;
+}
+
+.doug button {
+    background-color: #ff3333;
+}
+
+/* DJ */
+.dj h2 {
+    color: #f3aa21;
+}
+
+.dj button {
+    background-color: #f3aa21;
+}
+
+/* Pres */
+.pres h2 {
+    color: #ad33ff;
+}
+
+.pres button {
+    background-color: #ad33ff;
+}
+
+/* Other */
+.other h2 {
+    color: #00cc99;
+}
+
+.other button {
+    background-color: #00cc99;
+}
