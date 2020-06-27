@@ -1,6 +1,7 @@
 const one = document.getElementById("kevpanting");
 const two = document.getElementById("adub");
 const three = document.getElementById("hurt");
+const four = document.getElementById("djsing");
 
 // Play, Can add a Stop for other buttons
 
@@ -14,11 +15,16 @@ function playAudiothree() {
     three.play();
 }
 
+function playAudiofour() {
+    four.play();
+}
+
 // Pause
 function pauseAudio() { 
     one.pause();
     two.pause();
     three.pause(); 
+    four.pause(); 
 } 
 
 // Stop
@@ -28,5 +34,7 @@ function stopAudio() {
     two.pause();
     document.getElementById("adub").currentTime = 0 
     three.pause();
-    document.getElementById("adub").currentTime = 0  
+    document.getElementById("hurt").currentTime = 0  
+    four.pause();
+    document.getElementById("djsing").currentTime = 0 
   } 
