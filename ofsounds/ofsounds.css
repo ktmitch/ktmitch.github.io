@@ -1,5 +1,10 @@
 :root {
     --kevcolor: #0099ff;
+    --dougcolor: #ff3333;
+    --djcolor: #f3aa21;
+    --prescolor: #ad33ff;
+    --bryancolor: #c6d400;
+    --othercolor: #00cc99;
 }
 
 button {
@@ -65,45 +70,45 @@ section {
 
 /* Doug */
 .doug h2 {
-    color: #ff3333;
+    color: var(--dougcolor);
 }
 
 .doug button {
-    background-color: #ff3333;
+    background-color: var(--dougcolor);
 }
 
 /* DJ */
 .dj h2 {
-    color: #f3aa21;
+    color: var(--djcolor);
 }
 
 .dj button {
-    background-color: #f3aa21;
+    background-color: var(--djcolor);
 }
 
 /* Pres */
 .pres h2 {
-    color: #ad33ff;
+    color: var(--prescolor);
 }
 
 .pres button {
-    background-color: #ad33ff;
+    background-color: var(--prescolor);
 }
 
 /* Bryan */
 .bryan h2 {
-    color: #c6d400;
+    color: var(--bryancolor);
 }
 
 .bryan button {
-    background-color: #c6d400;
+    background-color: var(--bryancolor);
 }
 
 /* Other */
 .other h2 {
-    color: #00cc99;
+    color: var(--othercolor);
 }
 
 .other button {
-    background-color: #00cc99;
+    background-color: var(--othercolor);
 }

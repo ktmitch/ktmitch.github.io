@@ -12,7 +12,7 @@
 <body>
     <!-- About Info and Pause -->
     <section id="topbuttons">
-        <button type="button" onclick="alert('OF Soundboard is a collection of sounds made by OF members and affiliates created by OF Kev!')">About</button>
+        <button type="button" onclick="alert('OF Soundboard is a collection of sounds made by OF members and affiliates, created by OF Kev!')">About</button>
         <button onclick="pauseAudio()" type="button">Pause Sound</button>
         <button onclick="stopAudio()" type="button">Stop Sound</button>
     </section>
@@ -35,6 +35,11 @@
 
     <audio id="djsing">
         <source src="sounds/djsing.mp3" type="audio/mpeg">
+        Your browser does not support this magnificent audio!
+    </audio>
+
+    <audio id="yeah">
+        <source src="sounds/yeah.mp3" type="audio/mpeg">
         Your browser does not support this magnificent audio!
     </audio>
 
@@ -71,7 +76,7 @@
         <div class="pres">
             <section>
                 <h2>OF Pres:</h2>
-                <button>Toxic Laugh (Placeholder)</button>
+                <button type="button">Toxic Laugh (Placeholder)</button>
             </section>
             <hr>
         </div>
@@ -80,7 +85,8 @@
         <div class="bryan">
             <section>
                 <h2>OF Bryan:</h2>
-                <button>(Placeholder)</button>
+                <button onclick="playAudiofive()" type="button">Yeah!</button>
+                <button>Your Mouth (Placeholder)</button>
             </section>
             <hr>
         </div>
