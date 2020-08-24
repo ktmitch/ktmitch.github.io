@@ -68,8 +68,8 @@ function info() {
 
 function getquote() {
  
-    let randomquotes = Math.floor(Math.random(quotes.length) * 10 + 1); // Fix
-    let randomback = Math.floor(Math.random(backgrounds.length) * 20 + 1);
+    let randomquotes = Math.floor(Math.random() * quotes.length);
+    let randomback = Math.floor(Math.random() * backgrounds.length);
 
     qtext.innerHTML = quotes[randomquotes];
     b.style.backgroundImage = backgrounds[randomback];
