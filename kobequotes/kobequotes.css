@@ -41,18 +41,18 @@ body {
     }
 }
 
-@media screen and (max-width: 425px) {   /* Mobile with a view max of 425px */
+@media screen and (max-width: 525px) {   /* Mobile with a view max of 525px */
     h2 {
         text-align: center;
-        font-size: 35px;
-        
+        font-size: 30px;
+        background: rgba(247, 202, 24, 0.4); /* Improves readability */
     }
 
     .actions {
         margin-top: 50%;
     }
 
-    #about h4, #about h3 {
+    #about h4 {
         width: 40%;
         font-size: 10px;
         margin: 20px;
@@ -81,11 +81,11 @@ body {
     display: none;
 }
 
-#about h3 {
-    position: relative !important;
+#close:hover {
+    color: red;
 }
 
-#about h4, #about h3 {
+#about h4 {
     width: 20%;
     margin: 5px;
     background: white;
@@ -111,6 +111,7 @@ h2 {
     font-family: 'Lobster Two', cursive;
     transition: 2.0s;
     text-align: center;
+    background: rgba(247, 202, 24, 0.2); /* Improves readability */
 }
 
 .actions {

@@ -1,7 +1,7 @@
 // document.getElementById("bg").style.backgroundImage
 
 const i = document.getElementsByTagName("h4")[0];
-const about = document.getElementsByTagName("h3")[0];
+const about = document.getElementById("ab"); // Just used to showcase && in if statements
 
 const qtext = document.getElementById("quote");
 const b = document.getElementById("bg");
@@ -68,7 +68,7 @@ function info() {
 
 function getquote() {
  
-    let randomquotes = Math.floor(Math.random(quotes.length) * 10); // Fix
+    let randomquotes = Math.floor(Math.random(quotes.length) * 10 + 1); // Fix
     let randomback = Math.floor(Math.random(backgrounds.length) * 20 + 1);
 
     qtext.innerHTML = quotes[randomquotes];
