@@ -1,0 +1,128 @@
+/* Google Fonts */
+/* font-family: 'Francois One', sans-serif;
+font-family: 'Lobster Two', cursive;
+font-family: 'Satisfy', cursive; */
+
+/* Main Items */
+
+body {
+    background: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(247, 202, 24, 0.6));
+    background-image: url('background/kobe1.png');
+    height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+    transition: 1.0s;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+/* For different screens */
+
+@media screen and (min-width: 1440px) {   /* Laptop with a view max of 1440px */
+    h2 {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .actions {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 425px) {   /* Mobile with a view max of 425px */
+    h2 {
+        text-align: center;
+        font-size: 35px;
+        
+    }
+
+    .actions {
+        margin-top: 50%;
+    }
+
+    #about h4, #about h3 {
+        width: 40%;
+        font-size: 10px;
+        margin: 20px;
+        padding: 10px;
+    }
+}
+
+/* Info */
+
+#about {
+    width: 60%;
+}
+
+#about button {
+    background: none;
+    color: white;
+    border: none;
+}
+
+#about button:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+#close {
+    display: none;
+}
+
+#about h3 {
+    position: relative !important;
+}
+
+#about h4, #about h3 {
+    width: 20%;
+    margin: 5px;
+    background: white;
+    border: 3px solid black;
+    padding: 10px;
+    opacity: 0.7;
+    font-family: 'Francois One', sans-serif;
+    text-align: center;
+    display: none;
+    position: absolute; /* Prevents the rest of the page from moving down alot */
+}
+
+/* Quote */
+
+#quote {
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+h2 {
+    color: white;
+    font-size: 50px;
+    font-family: 'Lobster Two', cursive;
+    transition: 2.0s;
+    text-align: center;
+}
+
+.actions {
+    margin-top: 25%;
+}
+
+/*Button to get quote */
+
+.actions button {
+    padding: 20px;
+    margin: 10px;
+    border: 3px white solid;
+    color: purple;
+    background-color: yellow;
+}
