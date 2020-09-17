@@ -126,4 +126,63 @@ h2 {
     border: 3px white solid;
     color: purple;
     background-color: yellow;
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+}
+
+.actions button:hover {
+    padding: 20px;
+    margin: 10px;
+    border: 3px white solid;
+    color: yellow;
+    background-color: purple;
+    cursor: pointer;
+}
+
+/* Wireframe */
+
+footer {
+    border-top: 2px white solid;
+    margin: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#extrabuttons button {
+    justify-content: flex-end !important;
+    padding: 10px;
+    border: 1px white solid;
+    color: white;
+    background-color: blue;
+    font-size: 10px;
+    margin: 30px;
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+}
+
+#extrabuttons button:hover {
+    border: 1px white solid;
+    color: yellow;
+    background-color: black;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+/* These colors represent the Jersey Colors for the Lakers */
+
+.wire {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+}
+
+.wire button {
+    /* display: none; */
+    position: relative;
+}
+
+#wire1, #wire2 {
+    display: none;
 }

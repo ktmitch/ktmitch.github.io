@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Kobe Bryant Quote and Background Generator Project.">
+    <meta name="author" content="Kevin Mitchell">
+    <meta name="keywords" content="Kobe. Kobe Bryant, Quotes, Background, Random Generator, Kobe Bryant Kevin Mitchell">
+
+
     <title>Kobe Quotes</title>
     <link rel="stylesheet" href="kobequotes.css">
     <link rel="icon" type="image/png" sizes="96x96" href="jerseynum.png">
@@ -16,7 +21,7 @@
     <!--If the day is a special day in regards to Kobe, something special happens on the webpage-->
 
     <div id="about">
-        <button class="fas fa-info-circle fa-3x" title="About" onclick="info()"></button>
+        <button class="fas fa-info-circle fa-3x" title="About" onclick="info()"></button> <!-- <span class="close">&times;</span> A Close Symbol-->
         
         <h4 id="ab"><em>About</em><hr>For one of my senior projects in college, I created a 5-page website dedicated to Kobe Bryant as he was a big inspiration to my life. After I graduated, the files were deleted off the server and the hard drive with the files became corrupted. Kobe's passing inspired me to create another from scratch showcasing Kobe's Mamba Mentality, his motivation, and his greatness along with some of my web development skills.<hr>This generates a random quote from Kobe and a random background about him. I utilized HTML, CSS, and JavaScript.<i class="fas fa-times-circle" id="close" onclick="info()" title="Close"></i></h4>
 
@@ -30,16 +35,33 @@
     <button type="button" id="getquote" onclick="getquote()" title="Generate random quote and background!"><strong>Click Here</strong></button> <!--Rolls a random quote and background-->
     </div>
 
-    <!-- This is one of the hardest projects I've ever done. Not only because of the code, but because it involves a person that passed who was a big part of my life throughout both my childhood and adulthood along with the fact that it involved others including his daughter. No matter the amount of tears that roll down my eyes, I vowed to finish the base of this project by 8/24, officially announced Kobe Day in Orange County.-->
+ 
 
-    <!-- Update on 8/23 - On Kobe Bryant's birthday, the base project has been completed -->
 
-    <!-- <span class="close">&times;</span> A Close Symbol-->
 
+    <footer>
+        <div class="container" id="extrabuttons">
+            <button type="button" onclick="getwire()" id="shown">Show Wireframe (In Progress)</button>
+            <button type="button" onclick="copyclip()" id="ctrlclip">Copy to Clipboard</button>
+            <button type="button" onclick="closedwire()" id="closed">Close Wireframe</button>
+        </div>
+
+        <div class="wire">
+            <img src="Wireframe 1.png" id="wire1" alt="Wireframe 1">
+            <img src="Wireframe 2.png" id="wire2" alt="Wireframe 2">
+            <button class="fas fa-angle-right fa-2x" title="Next" onclick="nextimg()" type="button"></button>
+        </div>
+    </footer>
 
 <script src="kobequotes.js">
 
 </script>
+
+    <!-- To make the webpage load faster, I put the JavaScript at the end of the doc -->
+
+    <!-- This is one of the hardest projects I've ever done. Not only because of the code, but because it involves a person that passed who was a big part of my life throughout both my childhood and adulthood along with the fact that it involved others including his daughter. No matter the amount of tears that roll down my eyes, I vowed to finish the base of this project by 8/24, officially announced Kobe Day in Orange County.-->
+
+    <!-- Update on 8/23 - On Kobe Bryant's birthday, the base project has been completed -->
 
 </body>
 </html>

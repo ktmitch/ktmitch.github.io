@@ -4,9 +4,17 @@ const i = document.getElementsByTagName("h4")[0];
 const about = document.getElementById("ab"); // Just used to showcase && in if statements
 
 const qtext = document.getElementById("quote");
-const b = document.getElementById("bg");
-const c = document.getElementById("close");
+const back = document.getElementById("bg");
+const closeb = document.getElementById("close");
 const d = new Date();
+
+const wireone = document.getElementById("wire1");
+const wiretwo = document.getElementById("wire2");
+const bothwire = document.getElementsByClassName("wire")[0];
+const showwire = document.getElementById("shown");
+const closewire = document.getElementById("closed");
+
+const copied = document.getElementById("ctrlclip");
 
 let quotes = ['"Everything negative - pressure, challenges - is all an opportunity for me to rise."', 
 '"Dedication sees dreams come true."', 
@@ -53,16 +61,16 @@ function info() {
     if (i.style.display == "block" && about.style.display == "block") {
         about.style.display = "none";
         i.style.display = "none";
-        c.style.display = "none";
+        closeb.style.display = "none"; // If the information is already being shown, clicking info will close it
     }
 
     else {
         about.style.display = "block";
         i.style.display = "block";
-        c.style.display = "block";
+        closeb.style.display = "block";
     }
-// If the information is already being shown, clicking info will close it
-}
+
+} 
 
 // Below function takes the lengths of the arrays of background and quotes and outputs a rounded number corresponding to a quote and background
 
@@ -72,7 +80,10 @@ function getquote() {
     let randomback = Math.floor(Math.random() * backgrounds.length);
 
     qtext.innerHTML = quotes[randomquotes];
-    b.style.backgroundImage = backgrounds[randomback];
+    back.style.backgroundImage = backgrounds[randomback];
+
+    copied.innerText = "Copy to Clipboard"
+    copied.style.backgroundColor = "blue"
 }
 
 function specialdays() {
@@ -89,16 +100,69 @@ function specialdays() {
     }
 }
 
+function getwire() {
+    if (wireone.style.display !== "flex" && wiretwo.style.display !== "flex") {
+        wireone.style.display = "flex";
+        wiretwo.style.display = "none";
+  // For returning to original state
+        showwire.style.backgroundColor = "gray"; // Mamba Forever Jersey in 2k
+        closewire.style.backgroundColor = "blue";
+    }
+
+    // else if (wireone.style.display == "flex" || wiretwo.style.display == "flex") {
+    //     wireone.style.display = "none";
+    //     wiretwo.style.display = "none";
+    //     cancelwire.style.backgroundColor = "#5A0607" // Lower Merion (Kobe's High School Color)
+    // }
+
+    else {
+        wireone.style.display = "none";
+        wiretwo.style.display = "none";
+    }
+
+}
+
+function closedwire() {
+    if (wireone.style.display !== "none" || wiretwo.style.display !== "none") {
+        wireone.style.display = "none";
+        wiretwo.style.display = "none";
+// For returning to original state
+        showwire.style.backgroundColor = "blue";
+        closewire.style.backgroundColor = "gray";
+
+    }
+
+    else {
+        wireone.style.display = "none";
+        wiretwo.style.display = "none";
+    }
+
+}
+
+function nextimg() {
+    if (wireone.style.display !== "none") {
+        wireone.style.display = "none";
+        wiretwo.style.display = "flex";
+    }
+
+    else if (wiretwo.style.display !== "none") {
+        wireone.style.display = "flex";
+        wiretwo.style.display = "none";
+    }
+
+    else {
+        wireone.style.display = "none"
+        wiretwo.style.display = "none"
+    }
+
+}
+
+function copyclip() {
+    let forclip = qtext.textContent
+    navigator.clipboard.writeText(forclip);
+    copied.innerText = "Copied!";
+    copied.style.backgroundColor = "#5A0607"; // Lower Merion (Kobe's High School Color)
+    copied.style.transition = "1.0s";
+}
+
 // Input a function to change button on hover randomly
-
-// function getback() {
-//     if (b.style.backgroundImage = backgrounds[6]) {
-//         qtext.style.color = "black";
-//     }
-    
-//     else {
-//         b.style.backgroundImage = backgrounds[9];
-//     }
-// }
-
-// Fix this function
