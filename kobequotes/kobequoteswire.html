@@ -32,8 +32,39 @@ img:hover {
     transform: scale(1.03);
 }
 
-h2 {
+h2, a {
     font-family: "Comic Sans MS";
+}
+
+button {
+    display: flex;
+    justify-content: center !important;
+    padding: 30px;
+    border: 1px white solid;
+    color: purple;
+    background-color: yellow;
+    font-size: 10px;
+    margin: 30px;
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+    margin: 15px auto;
+    transition: 0.4s;
+}
+
+button:hover {
+    border: 1px white solid;
+    color: yellow;
+    background-color: #bf80ff;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 525px)  {  /* Mobile with a view max of 525px */
@@ -57,9 +88,11 @@ h2 {
 <body>
     <div id="wireframes">
         <img src="Wireframe 1.png" id="wire1" alt="Wireframe 1">
-        <h2>Created using Balsamiq</h2>
+        <h2>Wireframes created using <a style="text-decoration: none" href="https://balsamiq.com/" target="_blank">Balsamiq</a></h2>
         <img src="Wireframe 2.png" id="wire2" alt="Wireframe 2">
     </div>
-    
+<footer>
+    <button type="button" id="back"><a href="https://ktmitch.github.io/kobequotes/"><strong>Back</strong></a></button>
+</footer>
 </body>
 </html>
