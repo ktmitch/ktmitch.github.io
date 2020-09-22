@@ -8,12 +8,6 @@ const back = document.getElementById("bg");
 const closeb = document.getElementById("close");
 const d = new Date();
 
-const wireone = document.getElementById("wire1");
-const wiretwo = document.getElementById("wire2");
-const bothwire = document.getElementsByClassName("wire")[0];
-const showwire = document.getElementById("shown");
-const closewire = document.getElementById("closed");
-
 const copied = document.getElementById("ctrlclip");
 
 let quotes = ['"Everything negative - pressure, challenges - is all an opportunity for me to rise."', 
@@ -100,63 +94,6 @@ function specialdays() {
     }
 }
 
-function getwire() {
-    if (wireone.style.display !== "flex" && wiretwo.style.display !== "flex") {
-        wireone.style.display = "flex";
-        wiretwo.style.display = "none";
-  // For returning to original state
-        showwire.style.backgroundColor = "gray"; // Mamba Forever Jersey in 2k
-        closewire.style.backgroundColor = "blue";
-    }
-
-    // else if (wireone.style.display == "flex" || wiretwo.style.display == "flex") {
-    //     wireone.style.display = "none";
-    //     wiretwo.style.display = "none";
-    //     cancelwire.style.backgroundColor = "#5A0607" // Lower Merion (Kobe's High School Color)
-    // }
-
-    else {
-        wireone.style.display = "none";
-        wiretwo.style.display = "none";
-    }
-
-}
-
-function closedwire() {
-    if (wireone.style.display !== "none" || wiretwo.style.display !== "none") {
-        wireone.style.display = "none";
-        wiretwo.style.display = "none";
-// For returning to original state
-        showwire.style.backgroundColor = "blue";
-        closewire.style.backgroundColor = "gray";
-
-    }
-
-    else {
-        wireone.style.display = "none";
-        wiretwo.style.display = "none";
-    }
-
-}
-
-function nextimg() {
-    if (wireone.style.display !== "none") {
-        wireone.style.display = "none";
-        wiretwo.style.display = "flex";
-    }
-
-    else if (wiretwo.style.display !== "none") {
-        wireone.style.display = "flex";
-        wiretwo.style.display = "none";
-    }
-
-    else {
-        wireone.style.display = "none"
-        wiretwo.style.display = "none"
-    }
-
-}
-
 function copyclip() {
     let forclip = qtext.textContent
     navigator.clipboard.writeText(forclip);
@@ -166,3 +103,62 @@ function copyclip() {
 }
 
 // Input a function to change button on hover randomly
+
+// *Old Wirerframe Code* //
+
+// const wireone = document.getElementById("wire1");
+// const wiretwo = document.getElementById("wire2");
+// const bothwire = document.getElementsByClassName("wire")[0];
+// const showwire = document.getElementById("shown");
+// const closewire = document.getElementById("closed");
+
+// function getwire() {
+//     if (wireone.style.display !== "flex" && wiretwo.style.display !== "flex") {
+//         wireone.style.display = "flex";
+//         wiretwo.style.display = "none";
+//   // For returning to original state
+//         showwire.style.backgroundColor = "gray"; // Mamba Forever Jersey in 2k
+//         closewire.style.backgroundColor = "blue";
+//     }
+
+//     else {
+//         wireone.style.display = "none";
+//         wiretwo.style.display = "none";
+//     }
+
+// }
+
+// function closedwire() {
+//     if (wireone.style.display !== "none" || wiretwo.style.display !== "none") {
+//         wireone.style.display = "none";
+//         wiretwo.style.display = "none";
+// // For returning to original state
+//         showwire.style.backgroundColor = "blue";
+//         closewire.style.backgroundColor = "gray";
+
+//     }
+
+//     else {
+//         wireone.style.display = "none";
+//         wiretwo.style.display = "none";
+//     }
+
+// }
+
+// function nextimg() {
+//     if (wireone.style.display !== "none") {
+//         wireone.style.display = "none";
+//         wiretwo.style.display = "flex";
+//     }
+
+//     else if (wiretwo.style.display !== "none") {
+//         wireone.style.display = "flex";
+//         wiretwo.style.display = "none";
+//     }
+
+//     else {
+//         wireone.style.display = "none"
+//         wiretwo.style.display = "none"
+//     }
+
+// }

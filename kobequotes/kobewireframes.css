@@ -1,0 +1,23 @@
+body {
+    background: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(247, 202, 24, 0.6));
+    height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+
+img {
+    display: flex;
+    flex-direction: row;
+}
+
+#wire1 {
+    justify-content: flex-start;
+}
+
+#wire2 {
+    justify-content: flex-end;
+}

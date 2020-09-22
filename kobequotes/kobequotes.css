@@ -9,7 +9,7 @@ body {
     background: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(247, 202, 24, 0.6));
     background-image: url('background/kobe1.png');
     height: 100%;
-    background-position: center;
+    background-position: 50% 30%;   /* X and Y axis, almost the same as center top */
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,38 +26,6 @@ body {
     margin: 0px;
     padding: 0px;
     width: 100%;
-}
-
-/* For different screens */
-
-@media screen and (min-width: 1440px) {   /* Laptop with a view max of 1440px */
-    h2 {
-        text-align: center;
-        font-size: 60px;
-    }
-
-    .actions {
-        margin-top: 20%;
-    }
-}
-
-@media screen and (max-width: 525px) {   /* Mobile with a view max of 525px */
-    h2 {
-        text-align: center;
-        font-size: 30px;
-        background: rgba(247, 202, 24, 0.4); /* Improves readability */
-    }
-
-    .actions {
-        margin-top: 50%;
-    }
-
-    #about h4 {
-        width: 40%;
-        font-size: 10px;
-        margin: 20px;
-        padding: 10px;
-    }
 }
 
 /* Info */
@@ -77,6 +45,27 @@ body {
     cursor: pointer;
 }
 
+#about h4 {
+    width: 50%;
+    margin: 10% 25%;
+    background: white;
+    border: 3px solid black;
+    padding: 10px;
+    opacity: 0.5;
+    font-family: 'Francois One', sans-serif;
+    text-align: center;
+    display: none;
+    transition: 0.9s;
+    z-index: 1;
+    position: absolute; /* Prevents the rest of the page from moving down alot */
+}
+
+#about h4:hover {
+    opacity: 0.9;
+    transition: 0.8s;
+}
+
+
 #close {
     display: none;
 }
@@ -85,18 +74,7 @@ body {
     color: red;
 }
 
-#about h4 {
-    width: 20%;
-    margin: 5px;
-    background: white;
-    border: 3px solid black;
-    padding: 10px;
-    opacity: 0.7;
-    font-family: 'Francois One', sans-serif;
-    text-align: center;
-    display: none;
-    position: absolute; /* Prevents the rest of the page from moving down alot */
-}
+
 
 /* Quote */
 
@@ -128,6 +106,7 @@ h2 {
     background-color: yellow;
     font-family: 'Francois One', sans-serif;
     font-size: 15px;
+    position: absolute;
 }
 
 .actions button:hover {
@@ -185,4 +164,44 @@ footer {
 
 #wire1, #wire2 {
     display: none;
+}
+
+a {
+    color: white;
+}
+
+/* For different screens */
+
+@media screen and (min-width: 1440px) {   /* Laptop with a view max of 1440px */
+    h2 {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .actions {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 525px) {   /* Mobile with a view max of 525px */
+    body {
+        background-size: 100% 100%;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 24px;
+        background: rgba(247, 202, 24, 0.4); /* Improves readability */
+    }
+
+    .actions {
+        margin-top: 50%;
+    }
+
+    #about h4 {
+        width: 40%;
+        font-size: 10px;
+        margin: 10% 25%;
+        padding: 10px;
+    }
 }
