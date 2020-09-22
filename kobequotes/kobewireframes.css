@@ -9,7 +9,7 @@ body {
     z-index: -1;
 }
 
-img {
+#wireframes {
     display: flex;
     flex-direction: row;
 }
