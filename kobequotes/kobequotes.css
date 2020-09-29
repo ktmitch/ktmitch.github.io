@@ -38,9 +38,16 @@ body {
     background: none;
     color: white;
     border: none;
+    display: flex;
+    justify-content: flex-start;
 }
 
 #about button:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+#about button:active { /*For Mobile styling */
     color: yellow;
     cursor: pointer;
 }
@@ -61,6 +68,11 @@ body {
 }
 
 #about h4:hover {
+    opacity: 0.9;
+    transition: 0.8s;
+}
+
+#about h4:active { /*For Mobile styling */
     opacity: 0.9;
     transition: 0.8s;
 }
@@ -118,10 +130,20 @@ h2 {
     cursor: pointer;
 }
 
+.actions button:active { /*For Mobile styling */
+    padding: 25px;
+    margin: 10px;
+    border: 3px white solid;
+    color: yellow;
+    background-color: purple;
+    cursor: pointer;
+}
+
+
 /* Wireframe */
 
 footer {
-    border-top: 2px white solid;
+    /* border-top: 1px white dashed; */
     margin: 30px;
     display: flex;
     justify-content: flex-end;
@@ -142,6 +164,14 @@ footer {
 
 #extrabuttons button:hover {
     border: 1px white solid;
+    color: yellow;
+    background-color: black;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#extrabuttons button:active { /*For Mobile styling */
+    border: 2px white solid;
     color: yellow;
     background-color: black;
     transition: 0.4s;

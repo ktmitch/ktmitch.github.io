@@ -80,7 +80,7 @@ function getquote() {
     copied.style.backgroundColor = "blue"
 }
 
-function specialdays() {
+function getSpecialdays() {
     if (d.getMonth() + 1 == 8 && d.getDate() == 23) {  /* Kobe Birthday */
         qtext.innerHTML = "Happy Birthday Kobe Bryant"
     }
@@ -102,7 +102,6 @@ function copyclip() {
     copied.style.transition = "1.0s";
 }
 
-// Input a function to change button on hover randomly
 
 // *Old Wirerframe Code* //
 
