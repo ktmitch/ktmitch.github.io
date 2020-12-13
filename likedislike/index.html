@@ -12,17 +12,88 @@
 </head>
 <body>
     
-    <div id="main">
-        <img src="disney.png">
-            <i class="far fa-thumbs-up fa-2x"></i>
-            <br>
-            <i class="far fa-thumbs-down fa-2x"></i>
+    <div id="mode">
+    <button id="darkMode" onclick="darkMode()" title="Dark Mode"><i class="fas fa-moon fa-2x"></i></button>
+
+    <button id="lightMode" onclick="lightMode()" title="Light Mode"><i class="fas fa-sun fa-2x"></i></button>
+    </div>
+    
+<div class="main grid-container">
+
+    <div class="grid-item item-0">
+            <h2>Rate & Calculate: Streaming Services</h2>
     </div>
 
+    <div class="grid-item item-1">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button>
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+    <div class="grid-item item-2">        
+            <button><i class="far fa-thumbs-up fa-2x"></i></button> 
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+    <div class="grid-item item-3">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button> 
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+    <div class="grid-item item-4">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button>  
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+    
+    <div class="grid-item item-5">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button>
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+    <div class="grid-item item-6">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button> 
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+    <div class="grid-item item-7">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button>  
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+
+    <div class="grid-item item-8">
+            <button><i class="far fa-thumbs-up fa-2x"></i></button>
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+
+
+
+    <div class="grid-item item-9">        
+            <button><i class="far fa-thumbs-up fa-2x"></i></button>
+            <button><i class="far fa-thumbs-down fa-2x"></i></button>
+    </div>
+    
+    <div class="grid-item per-month">        
+            <h2 title="Approximate For Standard Subscriptions as of 10/30/2020">Calculation:<span id="moneysign"> $</span><span id="num"> 0</span> per month</h2>
+            <button type="button" id="calc" onclick="calcPerMonth()">Calculate</button>
+    </div>
+
+</div>
+
+<button class="ShowWire" onclick="showWireframes()"><i class="ShowWire fas fa-angle-double-down fa-2x"></i></button>
+<button class="HideWire" onclick="hideWireframes()"><i class="HideWire fas fa-angle-double-up fa-2x" style="display:none;"></i></button>
+
+<!-- Inline is used here as the Javascript function changes the inline display value, not the external -->
     <div id="wireframes">
-        <img src="likedislike1.png">
-        <img src="likedislike2.png">
-        <img src="likedislike3.png">
+        <img src="images/likedislike1.png">
+        <img src="images/likedislike2.png">
+        <img src="images/likedislike3.png">
     </div>
 
 <script src="likedislike.js">
