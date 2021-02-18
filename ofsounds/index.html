@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OF Soundboard</title>
     <link rel="stylesheet" href="ofsounds.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Saira+Condensed:wght@500&family=Orbitron:wght@600&family=Squada+One&display=swap" rel="stylesheet">
     <!-- Went to Google Fonts, Added Families, and copied link from Embed Can only use selected styles-->
 </head>
 
 <body>
+    <h1 id="title">OF Sounds</h1>
     <!-- About Info and Pause -->
     <section id="topbuttons">
-        <button type="button" onclick="alert('OF Soundboard is a collection of sounds made by OF members and affiliates, created by OF Kev!')">About</button>
+        <button type="button" onclick="alert('Personal Test Website - OF Soundboard is a collection of sounds made by OF members and affiliates, created by OF Kev!')">About</button>
         <button onclick="pauseAudio()" type="button">Pause Sound</button>
         <button onclick="stopAudio()" type="button">Stop Sound</button>
+        <button onclick="darkmode()" type="button" id="darkmode">Toggle Dark Mode</button>
     </section>
 
     <!-- Audio -->
@@ -33,8 +35,8 @@
         Your browser does not support this magnificent audio!
     </audio>
 
-    <audio id="djsing">
-        <source src="sounds/djsing.mp3" type="audio/mpeg">
+    <audio id="thanksgiving">
+        <source src="sounds/thanksgiving.mp3" type="audio/mpeg">
         Your browser does not support this magnificent audio!
     </audio>
 
@@ -67,7 +69,7 @@
     <div class="dj">
         <section>
             <h2>OF DJ:</h2>
-            <button onclick="playAudiofour()" type="button">Deez</button>
+            <button onclick="playAudiofour()" type="button">Thanksgiving (Placeholder)</button>
         </section>
         <hr>
     </div>
@@ -76,7 +78,7 @@
         <div class="pres">
             <section>
                 <h2>OF Pres:</h2>
-                <button type="button">Toxic Laugh (Placeholder)</button>
+                <button type="button">(Placeholder)</button>
             </section>
             <hr>
         </div>
@@ -86,7 +88,6 @@
             <section>
                 <h2>OF Bryan:</h2>
                 <button onclick="playAudiofive()" type="button">Yeah!</button>
-                <button>Your Mouth (Placeholder)</button>
             </section>
             <hr>
         </div>

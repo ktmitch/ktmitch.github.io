@@ -7,6 +7,11 @@
     --othercolor: #00cc99;
 }
 
+h1 {
+    text-align: center;
+    font-family: "Orbitron", sans-serif, Arial, "Squada One", cursive;
+}
+
 button {
     font-family: "Saira Condensed", Arial, Helvetica, sans-serif;
     font-size: 15px;
