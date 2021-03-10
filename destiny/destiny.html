@@ -13,9 +13,9 @@
     <div id="top">
 
         <div id="nav">
-            <button type="button" id="Reset">Reset</button>
+            <button type="button" id="Reset" onclick="resetGame()">Reset</button>
             <button type="button" id="openshop" onclick="openshop()">Open Shop</button>
-            <button type="button" id="next" >Next Enemy</button> <!--onclick="nextenemy()"-->
+            <button type="button" id="next" onclick="changeEnemy()">Next Enemy</button>
         </div>
         
         <div id="intro">
@@ -29,9 +29,9 @@
     <div id="enemy">
 
         <div id="user">
-            <h1 id="myname">Me</h1><br>
-            <h3 id="mylevel">Level: </h3>
-            <h4 id="myhp">HP: </h4>
+            <h1 id="user-name">Me</h1><br>
+            <h3 id="user-level">Level: </h3>
+            <h4 id="user-hp">HP: </h4>
         </div>
 <!--****************************************************************************-->
         <div class="enemyimage">
@@ -44,51 +44,11 @@
             <h4 id="enemyhp">HP: </h4>
         </div>
 
-        
-        <!-- 
-
-        
-        <img src="splicers.jpg" alt="Devil Splicers"> Make Display = None in JS for each image
-
-        <div>
-        <h1 id="enemy2">Devil Splicers</h1>
-        <h3>Level: </h3>
-        <h4>HP: </h4>
-        </div>
-
-        <img src="skolas.jpg" alt="Skolas">
-        <h1 id="enemy3">Skolas</h1>
-        <h3>Level: </h3>
-        <h4>HP: </h4>
-        
-        
-        <img src="atheon.jpg" alt="Atheon">
-        <h1 id="enemy4">Atheon</h1>
-        <h3>Level: </h3>
-        <h4>HP: </h4>
-
-        
-        <img src="crota.jpg" alt="Crota">
-        <h1 id="enemy5">Prince Crota</h1>
-        <h3>Level: </h3>
-        <h4>HP: </h4>
-
-        
-        <img src="oryx.jpg" alt="King Oryx">
-        <h1 id="enemy6">King Oryx</h1>
-        <h3>Level: </h3>
-        <h4>HP: </h4>
-
-        
-        <img src="oryxecho.jpg" alt="Echo King Oryx">
-        <h1 id="enemy7">Echo King Oryx</h1>
-        <h3>Level: </h3>
-        <h4>HP: </h4> -->
-
     </div>
 
+<!--**************************************************-->
     <div id="battle">
-        <button type="button" id="useattack">Attack</button>
+        <button type="button" id="useattack" onclick="attack()">Attack</button>
         <button type="button" id="startbattle" onclick="beginBattle()">Start Battle</button>
         <button type="button" id="usesuper" onclick="useSuper()">Super</button>
     </div>
