@@ -25,22 +25,109 @@
 }
 
 body {
-    font-family: 'Oswald', sans-serif, Verdana
+    font-family: 'Oswald', sans-serif, Verdana;
 }
 
 /**************Start**************/
 
 #info {
     display: flex;
+    justify-content: center;
+}
+
+form {
     width: 100%;
+}
+
+#guardian-name, #guardian-gender {
+    display: flex;
     justify-content: center;
+    width: 100%;
+}
+
+/* Guardian Class */
+
+#guardian-class {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#choose {
+    display: grid;
+    grid-template: auto auto auto;
+    grid-row-gap: 10px;
+}
+
+#choose h2 {
+    text-align: center;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+#charclasspics {
+    display: none;
+ } /* Hides label from grid */
+
+#guardian-class img {
+    height: auto;
+    max-width: 50%;
+}
+
+#titan {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#warlock {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#hunter {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
 }
 
 
-#info label, input {
-    justify-content: center;
+
+#titan-text {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    border: 1px purple solid;
 }
 
+#warlock-text {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    border: 1px red solid;
+}
+
+
+#hunter-text {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    border: 1px orange solid;
+}
+
+
+.classinfo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#choose img:hover {
+    transform: scale(1.07);
+    transition: 1s;
+}
+
+/* #choose input[type="radio"] {
+    display: none;
+} */
+
+
+/* Start button */
 #begin {
     display: flex;
     justify-content: center;
@@ -64,30 +151,23 @@ body {
     color: white;
 }
 
-.classinfo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
+footer {
+    font-size: 11px;
+    text-decoration: italic;
 }
 
-#choose label {
-    width: 33%;
-}
 
-#choose img:hover {
-    transform: scale(1.02);
-    transition: 1s;
-}
-
-#choose input[type="radio"]:checked {
-    border: 2px rgba(15, 160, 34, 0.349) solid;
-}
 
 @media only screen and (max-width: 550px) {
-    img {
+    /* img {
         width: 50%;
-    }
+    } */
 
     #begin input {
+        font-size: 11px;
+    }
+
+    #guardian-class p {
         font-size: 12px;
     }
 }

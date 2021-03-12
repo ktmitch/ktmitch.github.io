@@ -13,62 +13,76 @@
 
     <!--For and ID should be the same-->
     <div id="info">
-        <form action="http://127.0.0.1:5500/destiny.html" method="get" target="_self"> 
+        <form action="http://127.0.0.1:5500/destinygame.html" method="get" target="_self"> 
             <!-- action="https://ktmitch.github.io/destiny.html" -->
-        <fieldset>
-            <label for="name">Guardian Name</label><br>
-            <input type="text" id="name" name="fullname" placeholder="Cayde 6" size="40" required autofocus></input><br>
-        </fieldset>
+            <fieldset id="guardian-name">
+                <label for="name">Guardian Name: </label>
+                <input type="text" id="name" name="fullname" placeholder="Cayde 6" size="30" required autofocus></input><br>
+            </fieldset>
+                
+            <fieldset id="guardian-gender">
+                <label for="gender">Gender: </label><br>
+
+                <input type="radio" id="male" name="gender" value="Male"></input>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female"></input>
+                <label for="female">Female</label>
+
+                <input type="radio" id="exo" name="gender" value="Exo"></input>
+                <label for="exo">Exo</label>
+
+                <input type="radio" id="other" name="gender" value="Other"></input>
+                <label for="other">Other</label><br>
+            </fieldset>
+
+            <fieldset id="guardian-class">
+                <div id="choose">
+
+                    <h2>Choose Your Class: </h2>
+                    
+                    <label for="charclass" id="charclasspics"></label>
+
+                    <label for="titan" id="Titan">
+                        <input type="radio" name="charclass" id="titan" value="Titan">
+                        <img src="titan.jpg" alt="Titan">
+                    </label>
+                       
+                    
+                    <label for="warlock" id="Warlock">
+                        <input type="radio" name="charclass" id="warlock" value="Warlock">
+                        <img src="warlock.jpg" alt="Warlock">
+                    </label>
+                        
+                    
+
+                    <label for="hunter" id="Hunter">
+                        <input type="radio" name="charclass" id="hunter" value="Hunter">
+                        <img src="hunter.jpg" alt="Hunter">
+                    </label>
+
+                    <div id="titan-text">
+                    <h4>Titan</h4>
+                        <p class="classinfo">Titans are granted the power of strong defense and buff shoulders</p>
+                        <p class="classinfo">Super: Ward of Dawn - Defensive</p>
+                    </div>
+
+                    <div id="warlock-text">
+                    <h4>Warlock</h4>
+                        <p class="classinfo">Warlocks are granted the power of strength through magical prowess</p>
+                        <p class="classinfo">Super: Radiance - Self-Support</p>
+                    </div>
+
+                    <div id="hunter-text">
+                    <h4>Hunter</h4>
+                        <p class="classinfo">Hunters are granted the power of mobility and quickness</p>
+                        <p class="classinfo">Super: Golden Gun - Offensive</p>
+                    </div>
+                    
             
-        <fieldset>
-            <label for="gender">Gender</label><br>
+                </div>
 
-            <input type="radio" id="male" name="gender" value="Male"></input>
-            <label for="male">Male</label>
-
-            <input type="radio" id="female" name="gender" value="Female"></input>
-            <label for="female">Female</label>
-
-            <input type="radio" id="exo" name="gender" value="Exo"></input>
-            <label for="exo">Exo</label>
-
-            <input type="radio" id="other" name="gender" value="Other"></input>
-            <label for="other">Other</label><br>
-        </fieldset>
-
-        <fieldset>
-            <div id="choose">
-
-                <h1>Choose Your Class</h1>
-                
-                <label for="charclass"></label>
-
-                <label for="titan" id="Titan">Titan
-                    <input type="radio" name="charclass" id="titan" value="Titan">
-                    <img src="titan.jpg" alt="Titan">
-                </label>
-                    <p class="classinfo">Titans are granted the power of strong defense and buff shoulders</p>
-                    <p class="classinfo">Super: Ward of Dawn - Defensive</p>
-                
-                <label for="warlock" id="Warlock">Warlock
-                    <input type="radio" name="charclass" id="warlock" value="Warlock">
-                    <img src="warlock.jpg" alt="Warlock">
-                </label>
-                    <p class="classinfo">Warlocks are granted the power of strength through magical prowess</p>
-                    <p class="classinfo">Super: Radiance - Self-Support</p>
-                
-
-                <label for="hunter" id="Hunter">Hunter
-                    <input type="radio" name="charclass" id="hunter" value="Hunter">
-                    <img src="hunter.jpg" alt="Hunter">
-                </label>
-                    <p class="classinfo">Hunters are granted the power of mobility and quickness</p>
-                    <p class="classinfo">Super: Golden Gun - Offensive</p>
-                
-        
-            </div>
-
-        </fieldset>
+            </fieldset>
 
 <hr>
         <div id="begin">
@@ -76,7 +90,7 @@
         </div>
 
         </form>
-        </form>
+
     </div>
 
  <hr>
