@@ -1,0 +1,186 @@
+/**************Background and Font**************/
+
+:root {
+    background-color:rgb(138, 207, 230);
+    animation-name: destinybg;
+    animation-duration: 30s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease; 
+}
+
+@keyframes destinybg {
+    0% {
+        background-color: rgb(138, 207, 230);
+    }
+
+    50% {
+        background-color: rgb(130, 143, 148);
+    }
+
+    100% {
+        background-color: rgb(71, 108, 187);
+    }
+}
+
+body {
+    font-family: 'Oswald', sans-serif, Verdana;
+}
+
+/**************Start**************/
+
+#info {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+}
+
+#guardian-name, #guardian-gender, #guardian-class {
+    display: flex;
+    justify-content: center;
+    width: 97%;
+    margin: 10px;
+    border: 1px rgba(216, 242, 247, 0.616) solid;
+}
+
+#guardian-name input {
+    border: 2px blue solid;
+    transition: 1s;
+}
+
+
+/* Guardian Class */
+
+#guardian-class {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#choose {
+    display: grid;
+    grid-template: auto auto auto;
+    grid-row-gap: 10px;
+}
+
+#choose h2 {
+    text-align: center;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+#charclasspics {
+    display: none;
+ } /* Hides label from grid */
+
+#guardian-class img {
+    height: auto;
+    max-width: 50%;
+}
+
+#titan {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#warlock {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#hunter {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+
+
+#titan-text {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    border: 2px purple ridge;
+}
+
+#warlock-text {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    border: 2px red ridge;
+}
+
+
+#hunter-text {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    border: 2px rgb(0, 140, 255) ridge;
+}
+
+
+.classinfo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#choose img:hover {
+    transform: scale(1.07);
+    transition: 1s;
+}
+
+/* #choose input[type="radio"] {
+    display: none;
+} */
+
+
+/* Start button */
+#begin {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: rgba(0, 60, 255, 0.986);
+    opacity: 0.7;
+    width: 50%;
+    transition: 3s;
+}
+
+#start:hover {
+    width: 100%;
+    transition: 5s;
+    background-color: rgba(15, 160, 34, 0.349);
+    color: white;
+}
+
+footer {
+    font-size: 11px;
+    text-decoration: italic;
+}
+
+
+
+@media only screen and (max-width: 550px) {
+    #begin input {
+        font-size: 11px;
+    }
+
+    #guardian-class p {
+        font-size: 12px;
+    }
+
+    #guardian-name, #guardian-gender {
+        padding: 1px;
+    }
+
+    #guardian-name input {
+        width: 100px;
+        margin: 2px;
+    }
+}

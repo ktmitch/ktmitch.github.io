@@ -28,152 +28,24 @@ body {
     font-family: 'Oswald', sans-serif, Verdana;
 }
 
-/**************Start**************/
-
-#info {
-    display: flex;
-    justify-content: center;
-}
-
-form {
-    width: 100%;
-}
-
-#guardian-name, #guardian-gender {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-/* Guardian Class */
-
-#guardian-class {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-#choose {
-    display: grid;
-    grid-template: auto auto auto;
-    grid-row-gap: 10px;
-}
-
-#choose h2 {
-    text-align: center;
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
-}
-
-#charclasspics {
-    display: none;
- } /* Hides label from grid */
-
-#guardian-class img {
-    height: auto;
-    max-width: 50%;
-}
-
-#titan {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-#warlock {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-#hunter {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-}
-
-
-
-#titan-text {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-    border: 1px purple solid;
-}
-
-#warlock-text {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-    border: 1px red solid;
-}
-
-
-#hunter-text {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-    border: 1px orange solid;
-}
-
-
-.classinfo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-#choose img:hover {
-    transform: scale(1.07);
-    transition: 1s;
-}
-
-/* #choose input[type="radio"] {
-    display: none;
-} */
-
-
-/* Start button */
-#begin {
-    display: flex;
-    justify-content: center;
-    width: 100%
-}
-
-#start {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    color: rgba(0, 60, 255, 0.986);
-    opacity: 0.7;
-    width: 50%;
-    transition: 3s;
-}
-
-#start:hover {
-    width: 100%;
-    transition: 5s;
-    background-color: rgba(15, 160, 34, 0.349);
-    color: white;
-}
-
 footer {
     font-size: 11px;
     text-decoration: italic;
 }
 
-
-
-@media only screen and (max-width: 550px) {
-    /* img {
-        width: 50%;
-    } */
-
-    #begin input {
-        font-size: 11px;
-    }
-
-    #guardian-class p {
-        font-size: 12px;
-    }
-}
-
 /* ******************2nd Page - Battle****************** */
 /* *********Top********* */
+
+#main {
+    display: grid;
+    grid-template-areas: "nav nav nav nav"
+                        "enemy enemy enemy enemy"
+                        "foot foot foot foot"
+}
+
+#top {
+    grid-area: nav;
+}
 
 #nav {
     width: 100%;
@@ -197,30 +69,55 @@ footer {
 
 #nav button:hover {
     cursor: pointer;
+    background-color: rgba(78, 130, 209, 0.986);
 }
 
 #intro {
     position: relative;
     width: 100%;
     text-align: center;
+    grid-area: welcome;
 }
 
 #enemy {
     display: flex;
     justify-content: space-around;
     align-content: center;
+    flex-wrap: wrap;
     z-index: -1;
+    grid-area: enemy;
 }
 
 #enemy img {
-    width: 500px;
+    width: 400px;
 }
 
 #enemyname {
     text-decoration: underline;
 }
 
+/**Battle**/
+
+.void {
+    background: rgb(173,15,208);
+    background: radial-gradient(circle, rgba(173,15,208,1) 1%, rgba(202,0,245,1) 73%, rgba(255,255,255,1) 100%);
+    transition: 1s;
+}
+
+.solar {
+    background: rgb(208,70,15);
+    background: radial-gradient(circle, rgba(208,70,15,1) 0%, rgba(227,173,111,1) 71%, rgba(242,160,160,1) 100%);
+    transition: 1s;
+}
+
+.arc {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(111,220,227,1) 31%, rgba(58,235,252,1) 83%, rgba(255,255,255,1) 99%);
+    transition: 1s;
+}
+
 #battle {
+    grid-area: foot;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -232,7 +129,9 @@ footer {
     margin: 10px;
     font-size: 20px;
     font-family: 'Oswald', sans-serif, Verdana;
-    background-color: green;
+    background-color: rgb(15, 168, 189);
+    border-radius: 50% 20% / 10% 40%;
+    border: 1px rgb(255, 255, 255) solid;
 }
 
 .hidden { /* For Start Battle */
@@ -240,8 +139,8 @@ footer {
 }
 
 #battle button:hover {
-    border: 2px red solid;
-    transform: scale(1.1);
+    border: 2px rgb(229, 255, 0) solid;
+    transform: scale(1.05);
     margin: 10px;
     transition: 1s;
 }

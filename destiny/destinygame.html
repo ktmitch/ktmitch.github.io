@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 </head>
 <body onload="getFullName()">
-
+<div id="main">
     <div id="top">
 
         <div id="nav">
-            <button type="button" id="Reset" onclick="resetGame()">Reset</button>
-            <button type="button" id="openshop" onclick="openshop()">Open Shop</button>
-            <button type="button" id="next" onclick="changeEnemy()">Next Enemy</button>
+            <button type="button" id="Reset" onclick="resetGame()" title="Restart!" tabindex="1">Reset</button>
+            <button type="button" id="openshop" title="Open after battles!" onclick="openshop()" tabindex="2">Open Shop</button>
+            <button type="button" id="next" onclick="changeEnemy()" title="Click after battles!" tabindex="3">Next Enemy</button>
         </div>
         
         <div id="intro">
@@ -29,35 +29,36 @@
     <div id="enemy">
 
         <div id="user">
-            <h1 id="user-name">Me</h1><br>
+            <h2 id="user-name">Me</h2><br>
             <h3 id="user-level">Level: </h3>
             <h4 id="user-hp">HP: </h4>
+            <p id="damage-taken"></p>
         </div>
 <!--****************************************************************************-->
         <div class="enemyimage">
             <img src="thrall.jpg" alt="Thrall">
         </div>
 
-        <div>
-            <h1 id="enemyname">Thrall</h1><br>
+        <div id="enemyinfo">
+            <h2 id="enemyname">Thrall</h2><br>
             <h3 id="enemylevel">Level: </h3>
             <h4 id="enemyhp">HP: </h4>
+            <p id="damage-done"></p>
         </div>
 
     </div>
 
 <!--**************************************************-->
     <div id="battle">
-        <button type="button" id="useattack" onclick="attack()">Attack</button>
-        <button type="button" id="startbattle" onclick="beginBattle()">Start Battle</button>
-        <button type="button" id="usesuper" onclick="useSuper()">Super</button>
+        <button type="button" id="useattack" onclick="attack()" tabindex="4">Attack</button>
+        <button type="button" id="startbattle" onclick="beginBattle()" tabindex="5">Start Battle</button>
+        <button type="button" id="usesuper" onclick="useSuper()" tabindex="6">Super</button>
     </div>
 <!--**************************************************-->
-
+</div>
 <hr>
 
     <div id="shop"> <!--Shop in a grid template-->
-
         <div class="grid-item-1">
             <button type="button" id="Vestian" class="legendary">Vestian Dynasty</button>
             <img src="vestian.jpg" alt="Vestian Dynasty">
@@ -78,7 +79,7 @@
 
         <div class="grid-item-4">
             <button type="button" id="malice" class="exotic">Touch of Malice</button>
-            <img src="malice.jpg" alt="Black Spindle">
+            <img src="malice.jpg" alt="Touch of Malice">
             <h3>7,000 Glimmer</h3>
         </div>
 
@@ -102,7 +103,7 @@
 
         <div class="grid-item-8">
             <button type="button" id="raze" class="exotic">Raze Lighter</button>
-            <img src="razelighter.jpg" alt="Raze Lighrer">
+            <img src="razelighter.jpg" alt="Raze Lighter">
             <h3>9,000 Glimmer</h3>
         </div>
 

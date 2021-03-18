@@ -28,7 +28,8 @@ const charClass = urlParams.get("charclass")
 const user = {
     hp: 100,
     level: 1,
-    glimmer: 0
+    glimmer: 0,
+    weapon: "Khvostov 7G-02"
 };
 
 
@@ -37,35 +38,64 @@ document.getElementById("user-hp").innerText = "HP: " + user.hp;
 
 (charClass == "Warlock") ? user.super = "Radiance" :
 (charClass == "Titan") ? user.super = "Ward of Dawn" :
-(charClass == "Hunter") ? user.super = "Golden Gun" : //Blade Dancer
+(charClass == "Hunter") ? user.super = "Blade Dancer" : //Blade Dancer
 user.super = "Melee"
 
 if (user.super == "Radiance") {
     reviveCount = 1;
+    document.getElementById("usesuper").classList.toggle("solar");
+}
+
+if (user.super == "Ward of Dawn") {
+    document.getElementById("usesuper").classList.toggle("void");
+}
+
+if (user.super == "Blade Dancer") {
+    document.getElementById("usesuper").classList.toggle("arc");
 }
 
 // ****************Super****************
 function useSuper() {
     if (user.super == "Radiance") {
         if (user.hp <= 10) {
-            user.hp = 100;
+            user.hp = 35;
             console.log(user.hp);
             document.getElementById("user-hp").innerText = "HP: " + user.hp;
             document.getElementById("usesuper").setAttribute("disabled", "disabled")
+            document.getElementById("user-name").classList.toggle("solar");
         }
         else {
-            user.hp += 25;
+            user.hp += 20;
             console.log(user.hp);
             document.getElementById("user-hp").innerText = "HP: " + user.hp;
             document.getElementById("usesuper").setAttribute("disabled", "disabled")
+            document.getElementById("user-name").classList.toggle("solar");
         }
     }
+    //Warlock Super can revive user or slightly heal user depending on health
 
-    // else if (user.super == "Ward of Dawn") {
-     // Add Weapons of Light and Blessing of Light to the button   
+    if (user.super == "Ward of Dawn") {
+        user.hp += 75;
+        document.getElementById("user-hp").classList.toggle("void");
+        document.getElementById("usesuper").setAttribute("disabled", "disabled")
+        document.getElementById("damage-taken").innerText = "Shielded for +75 HP!"
+    }
+    //Titan Super gives them a shield that gives them 75 health
 
-    // }
-        
+    if (user.super == "Blade Dancer") {
+        document.getElementById("user-level").classList.toggle("arc");
+        document.getElementById("usesuper").setAttribute("disabled", "disabled")
+        bladeAttack = Math.floor(Math.random() * 10 * user.level)
+        document.getElementById("damage-done").innerText = bladeAttack + " damage to all!"
+        for (i = 0; i < enemies.length - 1; i++) {
+            if (enemies[i].status == "alive") {
+                enemies[i].hp -= bladeAttack
+                    console.log(bladeAttack)
+            }
+        }
+    }
+    //Hunter Super takes out the Hunter's blades to damage any enemy that is alive which is a random number multiplied by user level
+
 }
 
 
@@ -136,10 +166,10 @@ const echo = {
     status: "alive"
 };
 
-function oryxheal () {
-    oryx.hp += 25;
-    oryx.quote = "You think you can stop me guardian?"
-}
+// function oryxheal () {
+//     oryx.hp += 25;
+//     oryx.quote = "You think you can stop me guardian?"
+// }
 
 var enemies = [];
 enemies.push(thrall, splicers, skolas, atheon, crota, oryx, echo)
@@ -235,10 +265,16 @@ function beginBattle() {
 
     document.getElementById("openshop").setAttribute("disabled", "disabled")
     document.querySelector("#shop").style.display = "none"; //Always closes shop before battle and locks it
+    document.getElementById("user-hp").classList.remove("void");
+    document.getElementById("user-name").classList.remove("solar");
+    document.getElementById("user-level").classList.remove("arc"); //Takes off Styling of Supers
 
 
     document.getElementById("usesuper").removeAttribute("disabled", "disabled")
-    document.getElementById("useattack").removeAttribute("disabled", "disabled") //User now able to attack
+    document.getElementById("useattack").removeAttribute("disabled", "disabled") //User now able to attack and use super again
+
+    document.getElementById("user-hp").style.color = "black";
+    document.getElementById("enemyhp").style.color = "black";
 
     if (thrall.hp >= 1) {
         getThrallInfo();
@@ -282,13 +318,24 @@ function beginBattle() {
 
 // *******************Battle*******************
 
+function afterBattle() {
+    document.getElementById("next").removeAttribute("disabled", "disabled")
+    document.getElementById("openshop").removeAttribute("disabled", "disabled")
+
+    document.getElementById("usesuper").setAttribute("disabled", "disabled")
+    document.getElementById("useattack").setAttribute("disabled", "disabled")
+
+    document.getElementById("welcome").innerText = "Glimmer: " + user.glimmer;
+    document.getElementById("enemyhp").style.color = "#84262f";
+}
+
 function attack() {
     let enemyName = document.getElementById("enemyname").innerText;
     let enemyLevel = document.getElementById("enemylevel").innerText;
     let enemyHp = document.getElementById("enemyhp").innerText;
 
-    var userAttackPower = Math.floor(Math.random() * 10 * user.level)
-    var enemyAttackPower = Math.floor(Math.random() * 10 * 1)
+    var userAttackPower = Math.floor(Math.random() * 10 * user.level);
+    var enemyAttackPower = Math.floor(Math.random() * 10 * 1);
 
     //*****************Game Over*****************
 
@@ -308,6 +355,8 @@ function attack() {
                 document.getElementById("next").setAttribute("disabled", "disabled")
                 document.getElementById("usesuper").setAttribute("disabled", "disabled")
                 document.getElementById("useattack").setAttribute("disabled", "disabled")
+
+                document.getElementById("user-hp").style.color = "#84262f";
             }
 
         }
@@ -325,29 +374,26 @@ function attack() {
 
         thrall.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + thrall.hp
-        console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= enemyAttackPower
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + enemyAttackPower + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
             if (thrall.hp < 1) {
                 alert("Thrall is dead. Press Next Enemy")
 
-                document.getElementById("next").removeAttribute("disabled", "disabled")
-                document.getElementById("openshop").removeAttribute("disabled", "disabled")
-
-                document.getElementById("usesuper").setAttribute("disabled", "disabled")
-                document.getElementById("useattack").setAttribute("disabled", "disabled")
-
                 thrall.status = "dead"
-
                 user.glimmer += thrall.reward
-                document.getElementById("welcome").innerText = "Glimmer: " + user.glimmer;
+                afterBattle()
             }
         }
         
@@ -357,27 +403,26 @@ function attack() {
         splicers.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + splicers.hp
         console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= (enemyAttackPower * splicers.level)
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + (enemyAttackPower * splicers.level) + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower * splicers.level + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
             if (splicers.hp < 1) {
                 alert("Splicers are dead. Press Next Enemy")
 
-                document.getElementById("next").removeAttribute("disabled", "disabled")
-                document.getElementById("openshop").removeAttribute("disabled", "disabled")
-
-                document.getElementById("usesuper").setAttribute("disabled", "disabled")
-                document.getElementById("useattack").setAttribute("disabled", "disabled")
-
-                user.glimmer += splicers.reward
                 splicers.status = "dead"
-                document.getElementById("welcome").innerText = "Glimmer: " + user.glimmer;
+                user.glimmer += splicers.reward                
+                afterBattle()
         }
     }
 
@@ -386,24 +431,26 @@ function attack() {
 
         skolas.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + skolas.hp
-        console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= (enemyAttackPower * skolas.level)
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + (enemyAttackPower * skolas.level) + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower * skolas.level + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
             if (skolas.hp < 1) {
                 alert("Skolas is dead. Press Next Enemy")
-                document.getElementById("next").removeAttribute("disabled", "disabled")
-                document.getElementById("openshop").removeAttribute("disabled", "disabled")
 
-                document.getElementById("usesuper").setAttribute("disabled", "disabled")
-                document.getElementById("useattack").setAttribute("disabled", "disabled")
                 skolas.status = "dead"
+                user.glimmer += skolas.reward
+                afterBattle()
         }
         }
 
@@ -412,24 +459,26 @@ function attack() {
 
         atheon.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + atheon.hp
-        console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= (enemyAttackPower * atheon.level)
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + (enemyAttackPower * atheon.level) + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower * atheon.level + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
         if (atheon.hp < 1) {
             alert("The King of Time, Atheon, is dead! Press Next Enemy")
-            document.getElementById("next").removeAttribute("disabled", "disabled")
-            document.getElementById("openshop").removeAttribute("disabled", "disabled")
 
-            document.getElementById("usesuper").setAttribute("disabled", "disabled")
-            document.getElementById("useattack").setAttribute("disabled", "disabled")
             atheon.status = "dead"
+            user.glimmer += atheon.reward
+            afterBattle()
         }
         }
 
@@ -438,24 +487,26 @@ function attack() {
 
         crota.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + crota.hp
-        console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= (enemyAttackPower * crota.level)
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + (enemyAttackPower * crota.level) + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower * crota.level + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
         if (crota.hp < 1) {
             alert("Prince Crota is dead! Oh no, Oryx heard his son is dead! Press Next Enemy")
-            document.getElementById("next").removeAttribute("disabled", "disabled")
-            document.getElementById("openshop").removeAttribute("disabled", "disabled")
 
-            document.getElementById("usesuper").setAttribute("disabled", "disabled")
-            document.getElementById("useattack").setAttribute("disabled", "disabled")
             crota.status = "dead"
+            user.glimmer += crota.reward
+            afterBattle()
         }
         }
 
@@ -464,24 +515,26 @@ function attack() {
 
         oryx.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + oryx.hp
-        console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= (enemyAttackPower * oryx.level)
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + (enemyAttackPower * oryx.level) + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower * oryx.level + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
         if (oryx.hp < 1) {
             alert("KING ORYX is dea-WAIT HOLD ON?!?! Press Next Enemy")
-            document.getElementById("next").removeAttribute("disabled", "disabled")
-            document.getElementById("openshop").removeAttribute("disabled", "disabled")
 
-            document.getElementById("usesuper").setAttribute("disabled", "disabled")
-            document.getElementById("useattack").setAttribute("disabled", "disabled")
             oryx.status = "dead"
+            user.glimmer += oryx.reward
+            afterBattle()
         }
         }
 
@@ -490,29 +543,32 @@ function attack() {
 
         echo.hp -= userAttackPower
         document.getElementById("enemyhp").innerText = "HP: " + echo.hp
-        console.log("You did " + userAttackPower + " damage!")
+        document.getElementById("damage-done").innerText = "You did " + userAttackPower + " damage!"
 
         if (userAttackPower == 0) {
-            console.log("You missed!")
+            document.getElementById("damage-done").innerText = "You missed!"
         }
 
         user.hp -= (enemyAttackPower * echo.level)
         document.getElementById("user-hp").innerText = "HP: " + user.hp
-        console.log(enemyName + " did " + (enemyAttackPower * echo.level) + " damage!")
+        document.getElementById("damage-taken").innerText = enemyName + " did " + enemyAttackPower * echo.level + " damage!"
+
+        if (enemyAttackPower == 0) {
+            document.getElementById("damage-taken").innerText = "Good Dodge"
+        }
 
         if (echo.hp < 1) {
-            alert("The King of Time, Atheon, is dead! Press Next Enemy")
-            document.getElementById("next").removeAttribute("disabled", "disabled")
-            document.getElementById("openshop").removeAttribute("disabled", "disabled")
-
-            document.getElementById("usesuper").setAttribute("disabled", "disabled")
-            document.getElementById("useattack").setAttribute("disabled", "disabled")
+            alert("ORYX IS OFFICIALLY GONE! YOU SAVED THE WORLD!!")
+            
             echo.status = "dead"
+            user.glimmer += echo.reward
+            afterBattle()
+            document.getElementById("next").setAttribute("disabled", "disabled")
         }
         }
 
-    else if (enemyAttackPower == 0) {
-        console.log("Good dodge!") //Stops here if enemy misses
+    else {
+        console.log("No Enemies Detected")
     }
     
 }
@@ -553,15 +609,6 @@ function changeEnemy() {
             console.log("Not working")
     }
 
-
-    // (nextEnemy = "Splicers") ? document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='splicers.jpg' alt='Splicers'>" :
-    // (nextEnemy = "Skolas") ? document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='skolas.jpg' alt='Skolas'>" :
-    // (nextEnemy = "Atheon") ? document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='atheon.jpg' alt='Atheon'>" :
-    // (nextEnemy = "Crota") ? document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='crota.jpg' alt='Crota'>" :
-    // (nextEnemy = "Oryx") ? document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='oryx.jpg' alt='Oryx'>" :
-    // (nextEnemy = "echoOryx") ? document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='oryxecho.jpg' alt='Echo Oryx'>" :
-    // document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='thrall.jpg' alt='Thrall'>"
-
     startBattle.classList.toggle("hidden");
 
     // Switch cases (currently stops on Spilicers)
@@ -573,29 +620,64 @@ document.querySelector("#shop").style.display = "none"
 function openshop() {
     document.querySelector("#shop").style.display = "grid"
     document.getElementById("welcome").innerText = "Glimmer: " + user.glimmer;
+    window.alert("Browse the shop! Full functionality being released in Update 1.5!")
 }
 
-var shop = [ 
-    {
-        name: "Vestian",
-        cost: 2000
-    },
+// var Vestian =
+//     {
+//         name: "Vestian",
+//         cost: 2000
+//     },
 
-    {
-        name: "Sleeper Simulant",
-        cost: 7000
-    },
+//      
+//     {
+//         name: "Sleeper Simulant",
+//         cost: 7000
+//     },
 
-    {
-        name: "Black Spindle",
-        cost: 7000
-    }
-]
+//      
+//     {
+//         name: "Black Spindle",
+//         cost: 7000
+//     },
+
+
+//     {
+//         name: "Touch of Malice",
+//         cost: 7000
+//     },
+
+//     {
+//         name: "Telesto",
+//         cost: 8000
+//     },
+
+//     {
+//         name: "Tlaloc",
+//         cost: 9000
+//     },
+
+//     {
+//         name: "Dark Drinker",
+//         cost: 7000
+//     },
+
+//     {
+//         name: "Razer Lighter",
+//         cost: 7000
+//     },
+
+//     {
+//         name: "Gjallohorn",
+//         cost: 10000
+//     },
+// ]
 
 
 // ***********Ideas***************
+// Clean up naming
+// Styling for Weapons
 // If hunter input hunter symbol
-// Alerts - Yes goes to next battle, No goes to Shop
-// Purple buttons for Warlock, Red/Orange for Hunter, Blue for Titan
 // enemies[0].name is the Thrall. enemies[i] for i=0, i++. If statement before 
-// else if (user.super == "Ward of Dawn") {
+// Add Weapons of Light and Blessing of Light to the button   
+        

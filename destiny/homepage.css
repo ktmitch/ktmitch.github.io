@@ -1,0 +1,48 @@
+:root {
+    background-image: linear-gradient(to right, #6E90AB,#315A84, #182634);
+    background-size: cover;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+img {
+    border-radius: 50%;
+    margin: 0;
+}
+
+h1, h2, h4, ol {
+    color: white;
+    text-align: center;
+}
+
+ol {
+   list-style-position: inside; 
+}
+
+#title-author {
+    background: linear-gradient(90deg, rgba(4,11,60,1) 1%, rgba(0,137,245,1) 32%, rgba(255,255,255,0.7) 100%)
+}
+
+
+@media screen and (max-width: 768px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    img {
+        width: 50%;
+    }
+
+    li {
+        font-size: 14px;
+        margin-right: 35px;
+    }
+
+}
