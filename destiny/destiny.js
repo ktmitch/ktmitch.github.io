@@ -264,6 +264,7 @@ const startBattle = document.getElementById("startbattle")
 function beginBattle() {
 
     document.getElementById("openshop").setAttribute("disabled", "disabled")
+    document.getElementById("next").setAttribute("disabled", "disabled")
     document.querySelector("#shop").style.display = "none"; //Always closes shop before battle and locks it
     document.getElementById("user-hp").classList.remove("void");
     document.getElementById("user-name").classList.remove("solar");
@@ -366,6 +367,8 @@ function attack() {
             document.getElementById("next").setAttribute("disabled", "disabled")
             document.getElementById("usesuper").setAttribute("disabled", "disabled")
             document.getElementById("useattack").setAttribute("disabled", "disabled")
+
+            document.getElementById("user-hp").style.color = "#84262f";
         }
     }
 
@@ -564,6 +567,8 @@ function attack() {
             user.glimmer += echo.reward
             afterBattle()
             document.getElementById("next").setAttribute("disabled", "disabled")
+
+            document.body.style.backgroundColor = "#00FA9A"
         }
         }
 
