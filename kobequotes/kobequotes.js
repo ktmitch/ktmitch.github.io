@@ -71,10 +71,10 @@ function info() {
 function getquote() {
  
     let randomquotes = Math.floor(Math.random() * quotes.length);
-    let randomback = Math.floor(Math.random() * backgrounds.length);
+    // let randomback = Math.floor(Math.random() * backgrounds.length);
 
     qtext.innerHTML = quotes[randomquotes];
-    back.style.backgroundImage = backgrounds[randomback];
+    // back.style.backgroundImage = backgrounds[randomback];
 
     copied.innerText = "Copy to Clipboard"
     copied.style.backgroundColor = "blue"
@@ -102,62 +102,24 @@ function copyclip() {
     copied.style.transition = "1.0s";
 }
 
+copied.addEventListener('click', copyclip);
 
-// *Old Wirerframe Code* //
+function pausebg() {
+    var backimg = document.querySelector('body')
+    backimg.classList.toggle('paused')
 
-// const wireone = document.getElementById("wire1");
-// const wiretwo = document.getElementById("wire2");
-// const bothwire = document.getElementsByClassName("wire")[0];
-// const showwire = document.getElementById("shown");
-// const closewire = document.getElementById("closed");
+}
 
-// function getwire() {
-//     if (wireone.style.display !== "flex" && wiretwo.style.display !== "flex") {
-//         wireone.style.display = "flex";
-//         wiretwo.style.display = "none";
-//   // For returning to original state
-//         showwire.style.backgroundColor = "gray"; // Mamba Forever Jersey in 2k
-//         closewire.style.backgroundColor = "blue";
-//     }
+const pauseButton = document.getElementById("pause")
+pauseButton.addEventListener('click', pausebg);
 
-//     else {
-//         wireone.style.display = "none";
-//         wiretwo.style.display = "none";
-//     }
 
-// }
+function openstats() {
+    var ref = document.querySelector("#reference")
+    ref.classList.toggle("hidden")
+    ref.classList.toggle("flex")
+}
 
-// function closedwire() {
-//     if (wireone.style.display !== "none" || wiretwo.style.display !== "none") {
-//         wireone.style.display = "none";
-//         wiretwo.style.display = "none";
-// // For returning to original state
-//         showwire.style.backgroundColor = "blue";
-//         closewire.style.backgroundColor = "gray";
+const detailedStats = document.querySelector("#open-stats-button")
+detailedStats.addEventListener('click', openstats)
 
-//     }
-
-//     else {
-//         wireone.style.display = "none";
-//         wiretwo.style.display = "none";
-//     }
-
-// }
-
-// function nextimg() {
-//     if (wireone.style.display !== "none") {
-//         wireone.style.display = "none";
-//         wiretwo.style.display = "flex";
-//     }
-
-//     else if (wiretwo.style.display !== "none") {
-//         wireone.style.display = "flex";
-//         wiretwo.style.display = "none";
-//     }
-
-//     else {
-//         wireone.style.display = "none"
-//         wiretwo.style.display = "none"
-//     }
-
-// }

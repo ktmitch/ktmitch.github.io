@@ -16,6 +16,85 @@ body {
     position: relative;
     z-index: -1;
     transition: 1.0s;
+    animation-name: changeBG;
+    animation-direction: alternate;
+    animation-duration: 60s;
+    animation-timing-function: 3s;
+
+}
+
+@keyframes changeBG {
+    0% {
+        background-image: url(background/kobe1.png);
+    }
+    5% {
+        background-image: url(background/kobe2.png);
+    }
+    10% {
+        background-image: url(background/kobe3.png);
+    }
+    15% {
+        background-image: url(background/kobe4.png);
+    }
+    20% {
+        background-image: url(background/kobe5.png);
+    }
+    25% {
+        background-image: url(background/kobe6.png);
+    }
+    30% {
+        background-image: url(background/kobe7.png);
+    }
+    35% {
+        background-image: url(background/kobe8.png);
+    }
+    40% {
+        background-image: url(background/kobe9.png);
+    }
+    45% {
+        background-image: url(background/kobe10.png);
+    }
+    50% {
+        background-image: url(background/kobe11.png);
+    }
+    55% {
+        background-image: url(background/kobe12.png);
+    }
+    60% {
+        background-image: url(background/kobe13.png);
+    }
+    65% {
+        background-image: url(background/kobe14.png);
+    }
+    70% {
+        background-image: url(background/kobe15.png);
+    }
+    75% {
+        background-image: url(background/kobe16.png);
+    }
+    80% {
+        background-image: url(background/kobe17.png);
+    }
+    85% {
+        background-image: url(background/kobe18.png);
+    }
+    90% {
+        background-image: url(background/kobe19.png);
+    }
+    95% {
+        background-image: url(background/kobe20.png);
+    }
+    98% {
+        background-image: url(background/kobe21.png);
+    }
+    100% {
+        background-image: url(background/kobe22.png);
+    }
+
+}
+
+.paused {
+    animation-play-state: paused;
 }
 
 .container {
@@ -27,14 +106,6 @@ body {
     padding: 0px;
     width: 100%;
 }
-
-/* @keyframes testbg {
-    0% {
-        background-image: url('background/kobe1.png'); 
-    }
-} */
-
-/* Info */
 
 #about {
     width: 60%;
@@ -153,7 +224,7 @@ h2 {
 
 /* Wireframe */
 
-footer {
+.footer {
     /* border-top: 1px white dashed; */
     margin: 30px;
     display: flex;
@@ -167,7 +238,6 @@ footer {
     border: 1px white solid;
     color: white;
     background-color: blue;
-    font-size: 10px;
     margin: 30px;
     font-family: 'Francois One', sans-serif;
     font-size: 15px;
@@ -215,6 +285,97 @@ a {
     color: white;
 }
 
+/************Stats************/
+
+th, tr, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    font-size: 17px;
+}
+
+th > button {
+    padding: 15px;
+    background: rgba(126, 7, 238, 0.466);
+    margin-left: 55px;
+    color: white;
+}
+
+th > button:hover {
+    background: rgba(126, 7, 238, 0.753);
+    cursor: pointer;
+}
+
+#careerstats {
+    display: grid;
+    grid-template-areas: "stats stats acolades8"
+                         "stats stats acolades24"
+                         "fullstats fullstats fullstats";
+    grid-template-columns: 1fr 1fr 200px;
+    grid-template-rows: auto auto 1fr;
+}
+
+#stats {
+    grid-area: stats;
+}
+
+#stats table {
+    border: 2px solid black;
+    /* background: rgba(255, 255, 255, 0.7) */
+    background: rgba(104, 98, 13, 0.7);
+    width: 100%;
+    max-height: 100%;
+    color: white;
+    
+}
+
+/*Number Stats */
+
+h3 {
+    text-align: center;
+}
+
+#acolades-8 {
+    grid-area: acolades8;
+    list-style-type: square;
+    border: 1px black solid;
+    border-bottom: 3px black solid;
+    background: rgba(206, 193, 11, 0.7);
+    color: white;
+}
+
+#acolades-24 {
+    list-style-type: circle;
+    grid-area: acolades24;
+    border: 1px black solid;
+    background: rgba(103, 18, 201, 0.7);
+    color: white;
+}
+
+/*Reference Stats */
+
+#reference {
+    grid-area: fullstats;
+    background-color: rgba(155, 154, 156, 0.7);
+    justify-content: center;
+}
+
+#reference th {
+    background-color: rgba(127, 46, 207, 0.7);
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+
 /* For different screens */
 
 @media screen and (min-width: 1440px) {   /* Laptop with a view max of 1440px */
@@ -249,4 +410,25 @@ a {
         margin: 10% 25%;
         padding: 10px;
     }
+}
+
+@media screen and (max-width: 350px) {   /* Mobile with a view max of 525px */
+    #extrabuttons button {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    #careerstats {
+        grid-template-columns: 1fr 1fr 150px;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    th > button {
+        padding: 10px;
+        background: rgba(126, 7, 238, 0.466);
+        margin: 1px;
+        color: white;
+    }
+    
+
 }
