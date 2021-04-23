@@ -107,16 +107,20 @@ body {
     width: 100%;
 }
 
+/* About */
+
 #about {
-    width: 60%;
+    width: 100%;
+    display: flex;
 }
 
 #about button {
     background: none;
     color: white;
     border: none;
-    display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 30px;
 }
 
 #about button:hover {
@@ -135,7 +139,7 @@ body {
     background: white;
     border: 3px solid black;
     padding: 10px;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     font-family: 'Francois One', sans-serif;
     text-align: center;
     display: none;

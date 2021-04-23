@@ -1,7 +1,8 @@
 // document.getElementById("bg").style.backgroundImage
 
-const i = document.getElementsByTagName("h4")[0];
-const about = document.getElementById("ab"); // Just used to showcase && in if statements
+const info = document.getElementsByTagName("h4")[0];
+const about = document.getElementById("aboutinfo"); // Just used to showcase && in if statements
+const overlay = document.getElementById("overlay");
 
 const qtext = document.getElementById("quote");
 const back = document.getElementById("bg");
@@ -22,7 +23,8 @@ let quotes = ['"Everything negative - pressure, challenges - is all an opportuni
 '“I’m chasing perfection.”',
 '“The beauty in being blessed with talent is rising above doubters to create a beautiful moment.”',
 '“But are you a different animal and the same beast?”',
-'"Mamba Out"'];
+'"Mamba Out"',
+'"My parents are my backbone. Still are. They arere the only group that will support you if you score zero or you score 40."'];
 
 let backgrounds = ['url(background/kobe1.png)', 
 'url(background/kobe2.png)', 
@@ -50,23 +52,23 @@ let backgrounds = ['url(background/kobe1.png)',
 
     // Using 75 opacity https://www.peko-step.com/en/tool/alphachannel_en.html
 
-function info() {
+function infoshow() {
 
-    if (i.style.display == "block" && about.style.display == "block") {
+    if (info.style.display == "block" && about.style.display == "block") {
         about.style.display = "none";
-        i.style.display = "none";
+        info.style.display = "none";
         closeb.style.display = "none"; // If the information is already being shown, clicking info will close it
     }
 
     else {
         about.style.display = "block";
-        i.style.display = "block";
+        info.style.display = "block";
         closeb.style.display = "block";
     }
 
 } 
 
-// Below function takes the lengths of the arrays of background and quotes and outputs a rounded number corresponding to a quote and background
+// Below function takes the lengths of the arrays of quotes and outputs a rounded number corresponding to a quote
 
 function getquote() {
  
@@ -74,12 +76,14 @@ function getquote() {
     // let randomback = Math.floor(Math.random() * backgrounds.length);
 
     qtext.innerHTML = quotes[randomquotes];
+    console.log(quotes[randomquotes])
     // back.style.backgroundImage = backgrounds[randomback];
 
     copied.innerText = "Copy to Clipboard"
     copied.style.backgroundColor = "blue"
 }
 
+// Special Days, Special Messages
 function getSpecialdays() {
     if (d.getMonth() + 1 == 8 && d.getDate() == 23) {  /* Kobe Birthday */
         qtext.innerHTML = "Happy Birthday Kobe Bryant"
@@ -94,6 +98,8 @@ function getSpecialdays() {
     }
 }
 
+// Copy Quote
+
 function copyclip() {
     let forclip = qtext.textContent
     navigator.clipboard.writeText(forclip);
@@ -104,6 +110,8 @@ function copyclip() {
 
 copied.addEventListener('click', copyclip);
 
+// Pause Background
+
 function pausebg() {
     var backimg = document.querySelector('body')
     backimg.classList.toggle('paused')
@@ -113,11 +121,12 @@ function pausebg() {
 const pauseButton = document.getElementById("pause")
 pauseButton.addEventListener('click', pausebg);
 
+// Open Stats
 
 function openstats() {
-    var ref = document.querySelector("#reference")
-    ref.classList.toggle("hidden")
-    ref.classList.toggle("flex")
+    var ref = document.querySelector("#reference");
+    ref.classList.toggle("hidden");
+    ref.classList.toggle("flex");
 }
 
 const detailedStats = document.querySelector("#open-stats-button")

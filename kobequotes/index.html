@@ -21,9 +21,9 @@
     <!--If the day is a special day in regards to Kobe, something special happens on the webpage-->
 
     <div id="about">
-        <button class="fas fa-info-circle fa-3x" title="About" onclick="info()"></button> <!-- <span class="close">&times;</span> A Close Symbol-->
+        <button class="fas fa-info-circle fa-3x" title="About" onclick="infoshow()"></button> <!-- <span class="close">&times;</span> A Close Symbol-->
         
-        <h4 id="ab"><em>About</em><hr>For one of my senior projects in college, I created a 5-page website dedicated to Kobe Bryant as he was a big inspiration to my life. After I graduated, the files were deleted off the server and the hard drive with the files became corrupted. Kobe's passing inspired me to create another from scratch showcasing Kobe's Mamba Mentality, his motivation, and his greatness along with some of my web development skills.<hr>This generates a random quote from Kobe and a random background about him. I utilized HTML, CSS, and JavaScript.<i class="fas fa-times-circle" id="close" onclick="info()" title="Close"></i></h4>
+        <h4 id="aboutinfo"><em>About</em><hr>For one of my senior projects in college, I created a 5-page website dedicated to Kobe Bryant as he was a big inspiration to my life. After I graduated, the files were deleted off the server and the hard drive with the files became corrupted. Kobe's passing inspired me to create another from scratch showcasing Kobe's Mamba Mentality, his motivation, and his greatness along with some of my web development skills.<hr>This includes generation of a random quote from Kobe that can be copied,  a background slideshow, and his basketball stats. I utilized HTML, CSS, and JavaScript.<i class="fas fa-times-circle fa-xs" id="close" onclick="infoshow()" title="Close"></i></h4>
 
     </div>
 
@@ -37,7 +37,7 @@
 
     <div class='footer'>
         <div class="container" id="extrabuttons">
-            <button type="button" id="shown"><a href="kobequoteswire.html" target="_blank">Show Wireframe</a></button>
+            <button type="button" id="shown"><a href="kobequoteswire.html">Show Wireframe</a></button>
             <button type="button" id="ctrlclip">Copy to Clipboard</button>
             <button type="button" id="pause">Resume/Pause</button>
         </div>
@@ -174,7 +174,7 @@
                     <td>2.8</td>
                 </tr>
 
-                <th id="open-stats" colspan="3"><button id="open-stats-button">More In-Depth Stats</button></th>
+                <th id="open-stats" colspan="3"><button id="open-stats-button" class="far fa-arrow-alt-circle-down"> More In-Depth Stats </button></th>
                     <!-- Will toggle Basketball Reference Stats -->
             </table>
 
@@ -215,7 +215,6 @@
         </div>
 
     </div>
-
 <script src="kobequotes.js">
 
 </script>
