@@ -1,0 +1,73 @@
+:root {
+    --repeat: 16;
+    --randomColor: rgb(0, 0, 0);
+    background-color: lightblue;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive, 'Lobster', cursive;
+    font-size: 40px;
+}
+
+#main-container {
+    display: grid;
+    grid-template-areas: 'header header header'
+                         'author main button'
+}
+
+#head {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+}
+
+#author {
+    grid-area: author;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-family: 'Fredericka the Great', cursive, 'Press Start 2P', cursive;
+}
+
+#main-button {
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+#button-clear {
+    padding: 10px;
+    color: white;
+    background-color: rgb(245, 168, 181);
+    box-shadow: 2px 1px inset;
+    border-radius: 20px 10px;
+    font-size: 15px;
+}
+
+#main {
+    display: grid;
+    grid-template-rows: repeat(var(--repeat), auto);
+    grid-template-columns: repeat(var(--repeat), 1fr);
+    margin-bottom: 20px;
+    border: 40px rgb(238, 72, 72) solid;
+    box-shadow: 5px 10px rgb(219, 64, 64);
+    border-radius: 15px;
+}
+
+.allDivs {
+    background-color: white;
+}
+
+.randomDivs {
+    background-color: var(--randomColor);
+}
+
+/* Ideas
+Add Circles
+Keyframes animations on circles
+ */
+
