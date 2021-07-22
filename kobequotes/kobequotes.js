@@ -122,9 +122,10 @@ const pauseButton = document.getElementById("pause")
 pauseButton.addEventListener('click', pausebg);
 
 // Open Stats
-
+var ref = document.querySelector("#reference");
+var refButton = document.querySelector("#open-stats-button")
+// refButton.innerText = " Less In-Depth Stats"
 function openstats() {
-    var ref = document.querySelector("#reference");
     ref.classList.toggle("hidden");
     ref.classList.toggle("flex");
 }
