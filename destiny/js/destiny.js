@@ -16,9 +16,16 @@ function confirmInfo() {
 }
 
 resetGame = () => {
-    let reset = confirm("Are you sure you want to Reset the game? All progress will be lost!")
+    let reset = confirm("Are you sure you want to Reset the game? All progress will be lost!")  //Reloads webpage if user wants to reset the game, Goes back to pick a class if user chooses to also
         if (reset == true) {
-            location.reload()
+            let change = confirm("Would you like to change your class?")
+            if (change == true) {
+                window.history.back()
+            }
+            else {
+                location.reload()
+            }
+            
 }
 }
 // *************************************************************User****************************************************************
@@ -36,9 +43,10 @@ const user = {
 document.getElementById("user-level").innerText = "Level: " + user.level;
 document.getElementById("user-hp").innerText = "HP: " + user.hp;
 
-(charClass == "Warlock") ? user.super = "Radiance" :
+//Assigns Supers based on Character Class and customizes Super button based on super
+(charClass == "Warlock") ? user.super = "Radiance" : 
 (charClass == "Titan") ? user.super = "Ward of Dawn" :
-(charClass == "Hunter") ? user.super = "Blade Dancer" : //Blade Dancer
+(charClass == "Hunter") ? user.super = "Blade Dancer" : 
 user.super = "Melee"
 
 if (user.super == "Radiance") {
@@ -194,7 +202,7 @@ function getThrallInfo() {
 }
 
 function getSplicersInfo() {
-    document.getElementById("enemyname").innerText = splicers.name
+    document.getElementById("enemyname").innerText = splicers.name //Changes name, level, and HP based on enemy
     document.getElementById("enemylevel").innerText = "Level: " + splicers.level
     document.getElementById("enemyhp").innerText = "HP: " + splicers.hp
 
@@ -282,7 +290,7 @@ function beginBattle() {
     }
 
     else if (thrall.hp < 1 && splicers.hp >= 1) {
-        getSplicersInfo();
+        getSplicersInfo(); //When enemy before is dead and this enemy is alive, this code shows the enemy next
     }
 
     else if (splicers.hp < 1 && skolas.hp >= 1) {
@@ -328,6 +336,8 @@ function afterBattle() {
 
     document.getElementById("welcome").innerText = "Glimmer: " + user.glimmer;
     document.getElementById("enemyhp").style.color = "#84262f";
+
+    // document.getElementById("next").classList.toggle will edit this code to brighten Next Enemy button
 }
 
 function attack() {
@@ -586,31 +596,31 @@ function changeEnemy() {
 
     switch (nextEnemy) {
         case "Splicers":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='splicers.jpg' alt='Splicers'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/splicers.jpg' alt='Splicers'>";
             break;
         
         case "Skolas":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='skolas.jpg' alt='Skolas'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/skolas.jpg' alt='Skolas'>";
             break;
 
         case "Atheon":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='atheon.jpg' alt='Atheon'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/atheon.jpg' alt='Atheon'>";
             break;
         
         case "Crota":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='crota.jpg' alt='Crota'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/crota.jpg' alt='Crota'>";
             break;
 
         case "Oryx":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='oryx.jpg' alt='Oryx'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/oryx.jpg' alt='Oryx'>";
             break;
 
         case "Echo":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='oryxecho.jpg' alt='Echo Oryx'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/oryxecho.jpg' alt='Echo Oryx'>";
             break;
         
         default:
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='thrall.jpg' alt='Thrall'>"
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/thrall.jpg' alt='Thrall'>"
             console.log("Not working")
     }
 
