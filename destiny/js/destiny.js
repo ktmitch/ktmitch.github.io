@@ -596,31 +596,31 @@ function changeEnemy() {
 
     switch (nextEnemy) {
         case "Splicers":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/splicers.jpg' alt='Splicers'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/splicers.jpg' alt='Splicers'>";
             break;
         
         case "Skolas":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/skolas.jpg' alt='Skolas'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/skolas.jpg' alt='Skolas'>";
             break;
 
         case "Atheon":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/atheon.jpg' alt='Atheon'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/atheon.jpg' alt='Atheon'>";
             break;
         
         case "Crota":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/crota.jpg' alt='Crota'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/crota.jpg' alt='Crota'>";
             break;
 
         case "Oryx":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/oryx.jpg' alt='Oryx'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/oryx.jpg' alt='Oryx'>";
             break;
 
         case "Echo":
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/oryxecho.jpg' alt='Echo Oryx'>";
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/oryxecho.jpg' alt='Echo Oryx'>";
             break;
         
         default:
-            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='/img/thrall.jpg' alt='Thrall'>"
+            document.getElementsByClassName("enemyimage")[0].innerHTML = "<img src='img/thrall.jpg' alt='Thrall'>"
             console.log("Not working")
     }
 
