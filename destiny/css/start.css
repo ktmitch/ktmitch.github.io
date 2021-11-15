@@ -28,6 +28,15 @@ body {
     font-family: 'Oswald', sans-serif, Verdana;
 }
 
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    left: 0;
+}
+
 /**************Start**************/
 
 #demo button {
@@ -36,11 +45,14 @@ body {
     cursor: pointer;
     font-family: 'Oswald', sans-serif, Verdana;
     font-size: 16px;
+    box-shadow: inset 0 0 0 0 rgba(74, 185, 79, 0.5);
+    transition: ease-out 0.6s;
 }
 
 #demo button:hover {
     background-color:rgba(74, 185, 79, 0.5);
     color: white;
+    box-shadow: inset 400px 0 0 0 rgba(74, 185, 79, 0.5);
 }
 
 #demo a {
@@ -169,16 +181,17 @@ form {
     color: rgba(0, 60, 255, 0.986);
     opacity: 0.7;
     width: 50%;
-    transition: 2s;
+    transition: ease-out 2s;
     text-transform: uppercase;
     border-radius: 100px;
+    box-shadow: inset 0 0 0 0 rgba(74, 185, 79, 0.5);
 }
 
 #start:hover {
-    width: 100%;
-    transition: 5s;
     background-color: rgba(15, 160, 34, 0.349);
     color: white;
+    box-shadow: inset 400px 0 0 0 rgba(74, 185, 79, 0.5);
+    cursor: pointer;
 }
 
 footer {

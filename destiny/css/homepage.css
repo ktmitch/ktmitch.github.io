@@ -3,6 +3,19 @@
     background-size: cover;
 }
 
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    left: 0;
+}
+
+body {
+    margin: 0;
+}
+
 a {
     display: flex;
     justify-content: center;
@@ -20,7 +33,8 @@ h1, h2, h4, ol {
 }
 
 ol {
-   list-style-position: inside; 
+   list-style-position: inside;
+   font-size: 20px; 
 }
 
 #title-author {
